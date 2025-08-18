@@ -3,12 +3,21 @@ package main
 import "fmt"
 
 func main() {
-	const USDToEURO = 0.93
-	const USDToRUB = 92.50
+	amount, current, target := inputData()
+	fmt.Println(amount, current, target)
+	result := calculate(amount, current, target)
+	fmt.Println(result)
+}
 
-	const EUROS = 100.0
-	const usd = EUROS / USDToEURO
-	const rubs = usd * USDToRUB
-	fmt.Print(rubs)
-
+func calculate(amount float64, current, target string) (result float64) {
+	return
+}
+func inputData() (amount float64, current, target string) {
+	fmt.Println(`Input amount money:`)
+	fmt.Scan(&amount)
+	fmt.Println(`Input type money:`)
+	fmt.Scan(&current)
+	fmt.Println(`Input target money:`)
+	fmt.Scan(&target)
+	return
 }
