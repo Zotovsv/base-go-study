@@ -35,10 +35,13 @@ func actionWithTransations(tr []int, action string) int {
 		return result / len(tr)
 	default:
 		slices.Sort(tr)
+		if len(tr) <= 1 {
+			return tr[0]
+		}
 		if len(tr)/2 == 0 {
 			min := len(tr) / 2
 			max := len(tr)/2 - 1
-			return min + max/2
+			return (tr[min] + tr[max]) / 2
 		}
 		return tr[len(tr)/2]
 	}
